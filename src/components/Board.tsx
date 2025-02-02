@@ -164,37 +164,12 @@ function Board() {
             newKeyboard.set(attempt[index].toUpperCase(), "present");
           }
           newAttemptValidation[currentAttempt][index] = "present";
-          // if (targetIndexArr?.includes(index)) {
-          //   newAttemptValidation[currentAttempt][index] = "correct";
-          // }
         });
       }
     });
 
     setAttemptValidation(newAttemptValidation);
-
-    // Array.from(newAttemptValidation[currentAttempt]).map(
-    //   (validation, index) => {
-    //     if (validation === "correct") {
-    //       newKeyboard.set(attempt[index].toUpperCase(), "correct");
-    //     } else if (validation === "present") {
-    //       newKeyboard.set(attempt[index].toUpperCase(), "present");
-    //     } else {
-    //       newKeyboard.set(attempt[index].toUpperCase(), "missing");
-    //     }
-    //   }
-    // );
     setKeyboard(newKeyboard);
-
-    // Array.from(attempt).map((letter, index) => {
-    //   if (targetWord[index] === letter) {
-    //     newAttemptValidation[index] = "correct";
-    //   } else if (targetWord.includes(letter)) {
-    //     newAttemptValidation[index] = "present";
-    //   } else {
-    //     newAttemptValidation[index] = "missing";
-    //   }
-    // });
   }
 
   const renderRow = (attempt: string, attemptIndex: number) => {
@@ -224,13 +199,10 @@ function Board() {
     if (currentAttempt > attemptIndex) {
       if (validation === "correct") {
         className += " correct";
-        // keyboard.set(letter.toUpperCase(), "correct");
       } else if (validation === "present") {
         className += " present";
-        // keyboard.set(letter.toUpperCase(), "present");
       } else {
         className += " missing";
-        // keyboard.set(letter.toUpperCase(), "missing");
       }
     }
 
